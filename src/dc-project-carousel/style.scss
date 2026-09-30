@@ -14,7 +14,7 @@
 .carousel-container {
 	overflow-x: hidden;
 	// border: 3px solid yellow;
-	height: 400px;
+	height: 500px;
 	width: 100vw;
 	position: relative;
 }
@@ -92,19 +92,19 @@
 	left: 50%;
 	transform: translateX(-50%);
 	// border: 2px solid hotpink;
-	min-width: 75%;
+	min-width: 65%;
 	height: 100%;
 	position: relative;
 	.project-title {
 		color: #4773b8;
 		font-weight: 600;
 		display: table;
-		font-size: 33px;
+		font-size: 56px;
 		padding-left: 10px;
 		.underline {
 			border-bottom: 2px solid #4773b8;
 			width: 0px;
-			transition: width 0.25s ease-in;
+			transition: width 0.4s ease-in;
 		}
 		&:hover {
 			.underline {
