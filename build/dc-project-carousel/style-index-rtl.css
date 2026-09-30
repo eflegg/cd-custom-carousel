@@ -47,7 +47,12 @@
 }
 .navigation-btns .nav-btn.prev {
   transform: rotate(-135deg);
+  right: 30px;
+  transition: all 0.25s ease-in-out;
+}
+.navigation-btns .nav-btn.prev:hover {
   right: 20px;
+  transition: all 0.25s ease-in-out;
 }
 .navigation-btns .nav-btn.prev:after {
   content: "";
@@ -61,7 +66,12 @@
   right: -20px;
 }
 .navigation-btns .nav-btn.next {
+  left: 30px;
+  transition: all 0.25s ease-in-out;
+}
+.navigation-btns .nav-btn.next:hover {
   left: 20px;
+  transition: all 0.25s ease-in-out;
 }
 .navigation-btns .nav-btn.next:after {
   content: "";
