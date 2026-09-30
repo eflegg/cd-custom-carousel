@@ -1,0 +1,162 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-dc-project-carousel {
+	background-color: pink;
+	color: #fff;
+	padding: 2px;
+}
+
+.carousel-container {
+	overflow-x: hidden;
+	// border: 3px solid yellow;
+	height: 400px;
+	width: 100vw;
+	position: relative;
+}
+.navigation-btns {
+	// border: 1px solid blue;
+	z-index: 10;
+	width: 100%;
+	top: 45%;
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	.nav-btn {
+		position: relative;
+		padding: 12px;
+		border: 3px solid orangered;
+		display: inline-block;
+		/* Adjust the size of the arrow */
+		width: 10px;
+		height: 10px;
+		/* Adjust the thickness and color */
+		border: solid #333;
+		border-width: 0 2px 2px 0;
+		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		&:hover {
+			cursor: pointer;
+		}
+		&.prev {
+			transform: rotate(135deg);
+			left: 20px;
+			&:after {
+				content: "";
+				width: 51px;
+				height: 2px;
+				background: black;
+				display: block;
+				transform: rotate(45deg);
+				position: relative;
+				top: 4px;
+				left: -20px;
+			}
+		}
+		&.next {
+			right: 20px;
+			&:after {
+				content: "";
+				width: 51px;
+				height: 2px;
+				background: black;
+				display: block;
+				transform: rotate(45deg);
+				position: relative;
+				top: 4px;
+				left: -20px;
+			}
+		}
+	}
+}
+.carousel-track_outer {
+	transition: transform 0.4s ease-in-out;
+	position: relative;
+	height: 100%;
+	// border: 2px solid seagreen;
+	width: 150%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.carousel-track {
+	// border: 2px solid blue;
+	display: flex;
+	height: 100%;
+}
+
+.card {
+	left: 50%;
+	transform: translateX(-50%);
+	// border: 2px solid hotpink;
+	min-width: 75%;
+	height: 100%;
+	position: relative;
+	.project-title {
+		color: #4773b8;
+		font-weight: 600;
+		display: table;
+		font-size: 33px;
+		padding-left: 10px;
+		.underline {
+			border-bottom: 2px solid #4773b8;
+			width: 0px;
+			transition: width 0.25s ease-in;
+		}
+		&:hover {
+			.underline {
+				width: 100%;
+				transition: width 0.25s ease-in;
+			}
+		}
+	}
+
+	.project-overlay {
+		position: absolute;
+		top: 0;
+		left: 10px;
+		right: 10px;
+
+		height: 100%;
+		background: rgba(247, 238, 218, 0.3);
+	}
+	.project-image-wrapper {
+		// aspect-ratio: 3/2;
+		padding: 0 10px;
+		height: 100%;
+		img {
+			object-fit: cover;
+			max-height: 100%;
+			max-width: 100%;
+		}
+	}
+}
+
+/* Dynamic Dots Styling */
+.pagination-dots {
+	position: relative;
+	z-index: 20;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 15px;
+}
+
+.dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 1px solid black;
+	background-color: transparent;
+	cursor: pointer;
+	transition:
+		transform 0.3s ease,
+		background-color 0.3s ease;
+}
+
+.dot.active {
+	background-color: black;
+}
