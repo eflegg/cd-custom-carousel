@@ -14,20 +14,29 @@
 
 
 
-<!-- this container stays screen width -->
-<div class="container-custom">
+<!-- a first attempt -->
+
+<div class="carousel-wrapper">
 
 
-	<div class="carousel-container" id="carousel-container">
-		<div class="navigation-btns">
-			<div class="nav-btn prev" id="prev"></div>
-			<div class="nav-btn next" id="next"></div>
+
+	<div
+		class="carousel"
+		role="group"
+		aria-label="List of projects"
+		aria-roledescription="carousel">
+		<div aria-label="Choose slide to display" role="group" class="carousel__navdots home-page">
+			<!-- <button type="button" aria-label="1 of 4" aria-disabled="true"></button>
+			<button type="button" aria-label="2 of 4" aria-disabled="false"></button>
+			<button type="button" aria-label="3 of 4" aria-disabled="false"></button>
+			<button type="button" aria-label="4 of 4" aria-disabled="false"></button> -->
 		</div>
-		<!-- this container overflowers the carousel container -->
-		<!-- <div class="carousel-track_outer"> -->
 
+		<div
+			class="carousel__slides"
+			aria-atomic="false"
+			aria-live="off">
 
-		<div class="carousel-track" id="track">
 
 			<?php
 			$current_id = get_the_ID(); // Gets the ID of the current page/post
@@ -48,7 +57,10 @@
 
 					<?php if (has_post_thumbnail()) : ?>
 						<!-- Card Container -->
-						<div class="card">
+						<div class="carousel__slide card"
+							role="group"
+							aria-label="1 of 4"
+							aria-roledescription="slide">
 							<a href="<?php the_permalink(); ?>" class="cpt-link">
 
 								<!-- Featured Image Wrapper -->
@@ -69,12 +81,6 @@
 
 				<?php endwhile; ?>
 
-
-
-
-
-
-
 				<?php
 				// 4. Reset global post data back to the main query
 				wp_reset_postdata();
@@ -87,8 +93,5 @@
 
 
 		</div>
-		<!-- </div> -->
 	</div>
-	<!-- Dynamic Pagination Dots Container -->
-	<div class="pagination-dots"></div>
 </div>

@@ -31,14 +31,13 @@
 .navigation-btns .nav-btn {
   position: relative;
   padding: 12px;
-  border: 3px solid orangered;
   display: inline-block;
   /* Adjust the size of the arrow */
   width: 10px;
   height: 10px;
   /* Adjust the thickness and color */
-  border: solid #333;
-  border-width: 0 0 2px 2px;
+  border: solid #4773b8;
+  border-width: 0 0 4px 4px;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
@@ -57,8 +56,8 @@
 .navigation-btns .nav-btn.prev:after {
   content: "";
   width: 51px;
-  height: 2px;
-  background: black;
+  height: 4px;
+  background: #4773b8;
   display: block;
   transform: rotate(-45deg);
   position: relative;
@@ -76,8 +75,8 @@
 .navigation-btns .nav-btn.next:after {
   content: "";
   width: 51px;
-  height: 2px;
-  background: black;
+  height: 4px;
+  background: #4773b8;
   display: block;
   transform: rotate(-45deg);
   position: relative;
@@ -92,26 +91,24 @@
   width: 150%;
   right: 50%;
   transform: translateX(50%);
+  overflow: auto;
 }
 
 .carousel-track {
   display: flex;
   height: 100%;
+  scroll-snap-type: x mandatory;
 }
 
-.card {
-  right: 50%;
-  transform: translateX(50%);
-  min-width: 65%;
-  height: 100%;
-  position: relative;
-}
 .card .project-title {
   color: #4773b8;
   font-weight: 600;
   display: table;
   font-size: 56px;
   padding-right: 10px;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
 }
 .card .project-title .underline {
   border-bottom: 2px solid #4773b8;
@@ -131,7 +128,6 @@
   background: rgba(247, 238, 218, 0.3);
 }
 .card .project-image-wrapper {
-  padding: 0 10px;
   height: 100%;
 }
 .card .project-image-wrapper img {
@@ -141,25 +137,123 @@
 }
 
 /* Dynamic Dots Styling */
-.pagination-dots {
-  position: relative;
-  z-index: 20;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 15px;
-}
-
 .dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid #4773b8;
   background-color: transparent;
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .dot.active {
-  background-color: black;
+  background-color: #4773b8;
+}
+
+/* Show just one 991px wide slide at a time */
+.wp-site-blocks {
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  overflow: auto;
+  position: relative;
+  width: 150%;
+  right: 50%;
+  transform: translateX(50%);
+  height: auto;
+  align-items: center;
+  display: flex;
+}
+
+.carousel {
+  height: 80%;
+  width: 100vw;
+}
+
+.carousel__slides,
+.carousel__slide {
+  width: 100%;
+  height: 500px;
+}
+
+/* Make carousel swipeable */
+.carousel__slides {
+  column-gap: 20px;
+  display: flex;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel__slide {
+  right: 50%;
+  transform: translateX(50%);
+  min-width: 65%;
+  height: 100%;
+  position: relative;
+  scroll-snap-align: center;
+}
+
+.carousel__slides.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar */
+.carousel__slides {
+  scrollbar-width: none; /* Firefox and latest Chromium */
+}
+
+.carousel__slides::-webkit-scrollbar {
+  display: none; /* Safari and legacy Chromium */
+}
+
+/* Styling nav dots */
+.carousel {
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.carousel__navdots {
+  bottom: 0;
+  column-gap: 16px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+.carousel__navdots button {
+  /* reset default style */
+  -moz-appearance: none;
+  -webkit-apperance: none;
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  /* style as a grey dot */
+  background-color: #9a9a9a;
+  border-radius: 50%;
+  height: 10px;
+  padding: 0;
+  width: 10px;
+}
+
+.carousel__navdots button.is-active {
+  background-color: #4773b8; /* blue */
+}
+
+.carousel__navdots button:focus-visible {
+  outline: 2px solid #4773b8; /* blue */
+  outline-offset: 2px;
+}
+
+/* Stylistic purpose */
+.carousel {
+  margin: 0 auto;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
 }
