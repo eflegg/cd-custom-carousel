@@ -25,7 +25,7 @@
 		role="group"
 		aria-label="List of projects"
 		aria-roledescription="carousel">
-		<div aria-label="Choose slide to display" role="group" class="carousel__navdots home-page">
+		<div aria-label="Choose slide to display" role="group" class="carousel__navdots ">
 			<!-- <button type="button" aria-label="1 of 4" aria-disabled="true"></button>
 			<button type="button" aria-label="2 of 4" aria-disabled="false"></button>
 			<button type="button" aria-label="3 of 4" aria-disabled="false"></button>
@@ -59,7 +59,7 @@
 						<!-- Card Container -->
 						<div class="carousel__slide card"
 							role="group"
-							aria-label="1 of 4"
+
 							aria-roledescription="slide">
 							<a href="<?php the_permalink(); ?>" class="cpt-link">
 
