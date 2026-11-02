@@ -104,7 +104,7 @@
   color: #4773b8;
   font-weight: 600;
   display: table;
-  font-size: 56px;
+  font-size: var(--wp--preset--font-size--large);
   padding-left: 10px;
   position: relative;
   z-index: 10;
