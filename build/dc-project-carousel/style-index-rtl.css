@@ -152,10 +152,6 @@
 }
 
 /* Show just one 991px wide slide at a time */
-.wp-site-blocks {
-  overflow: hidden;
-}
-
 .carousel-wrapper {
   overflow: auto;
   position: relative;
